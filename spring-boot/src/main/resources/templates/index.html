@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--  jQuery -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet"
+	href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+
+
+
+
+<meta charset="ISO-8859-1" />
+<title>Hello</title>
+
+<style>
+.container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+html, body, .my-wrapper {
+	height: 90%;
+}
+
+fieldset {
+	background-color: white;
+	margin: 20px;
+	padding: 0 50px 10px;
+	border: 1px solid #666;
+	border-radius: 8px;
+	padding-top: 10px;
+}
+
+button {
+	border-radius: 30px;
+}
+</style>
+</head>
+<script>
+	$(document).ready(
+			function() {
+				var date_input = $('input[name="date2"]'); //our date input has the name "date"
+				var container = $('.bootstrap-iso form').length > 0 ? $(
+						'.bootstrap-iso form').parent() : "body";
+				var options = {
+					format : 'mm/dd/yyyy',
+					container : container,
+					todayHighlight : true,
+					autoclose : true,
+				};
+				date_input.datepicker(options);
+			})
+</script>
+<body style="background-image: url('background.png')">
+	<div class="my-wrapper valign-wrapper center-align container">
+		<form method="GET" action="/display">
+			<fieldset>
+				<legend>
+					<b>Calculate Your Age!</b>
+				</legend>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="firstName" type="text" name="firstName"
+							required="required" /> <label>First Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="lastName" type="text" name="lastName"
+							required="required" /> <label>Last Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="date" name="date" type="date" required="required" /> <label>Birthdate
+						</label>
+					</div>
+				</div>
+				<div class="center-align">
+					<!--  <input type="submit" value="Submit"> -->
+					<button class="btn waves-effect waves-light pink darken-1"
+						type="submit" name="action">
+						Submit <i class="material-icons right">send</i>
+					</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

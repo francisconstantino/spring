@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<meta charset="ISO-8859-1" />
+<title>Results</title>
+<style>
+.container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 30px;
+}
+
+html, body, .my-wrapper {
+	height: 90%;
+}
+
+.resize {
+	width: 150px;
+	height: 150px;
+}
+
+fieldset {
+	background-color: white;
+	margin: 20px;
+	padding: 0 50px 50px;
+	border: 1px solid #666;
+	border-radius: 8px;
+	padding-top: 10px;
+}
+
+</style>
+</head>
+<body style="background-image: url('background.png')">
+	<div
+		class="my-wrapper valign-wrapper center-align container padding-size">
+		<fieldset>
+			<img src="cat.png" class="resize" />
+			<h5 class="center-align">
+				<p th:text="'Hello, '  + ${firstName} + ' ' + ${lastName} + '!'" />
+			</h5>
+			<h5 class="center-align">
+				<p th:text="'Your current age is ' + ${age} + '.'" />
+			</h5>
+			<h6 class="center-align">
+				<p>Have a nice day!</p>
+			</h6>
+			<div class="center-align">
+				<a href="/"><button
+						class="btn waves-effect waves-light pink darken-1" type="submit"
+						value="Submit">
+						<i class="material-icons left">arrow_back</i> Go Back
+					</button></a>
+				<!-- <a href="/">Go back</a> -->
+			</div>
+		</fieldset>
+	</div>
+</body>
+</html>
