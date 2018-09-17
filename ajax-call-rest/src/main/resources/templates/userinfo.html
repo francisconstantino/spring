@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+<script src="jquery-3.3.1.js"></script>
+<script>
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			datatype: "json",
+			url: "http://localhost:8081/Java/Bootcamp/userservice/getuser",
+			success: function(json) {
+				alert("Successful!");
+			}
+		}).then(function(json) {
+			$('.userinfo-id').append(json.id);
+			$('.userinfo-contactno').append(json.contactno);
+			$('.userinfo-country').append(json.country);
+			$('.userinfo-name').append(json.name);
+		});
+	});
+
+</script>
+</head>
+<body>
+	<div>
+		<p class="userinfo-id">ID: </p>
+		<p class="userinfo-contactno">Contact No.: </p>
+		<p class="userinfo-country">Country: </p>
+		<p class="userinfo-name">Name: </p>
+
+	</div>
+</body>
+</html>

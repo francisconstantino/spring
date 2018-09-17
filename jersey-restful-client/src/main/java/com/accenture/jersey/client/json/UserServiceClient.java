@@ -28,5 +28,7 @@ public class UserServiceClient {
 				.post(ClientResponse.class, json.toString());
 		String output = response.getEntity(String.class);
 		System.out.println(output);
+		
+		
 	}
 }
